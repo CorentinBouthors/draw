@@ -1,29 +1,37 @@
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Draw</title>
-    <style>
-      * {
-        padding: 0;
-        margin: 0;
-      }
 
-      canvas {
-        background: rgb(215, 215, 236);
-        display: block;
-        margin: 0 auto;
-      }
-    </style>
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <title>Draw</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
 
-  <body>
-    <canvas id="myCanvas" width="800" height="500"></canvas>
+    canvas {
+      background: rgb(215, 215, 236);
+      display: block;
+      margin: 0 auto;
+    }
+  </style>
+</head>
 
-    <script>
-      const canvas = document.getElementById("myCanvas")
-      const ctx = canvas.getContext("2d")
+<body>
+  <canvas id="myCanvas" width="800" height="500"></canvas>
 
-      
-    </script>
-  </body>
+  <script>
+    const canvas = document.getElementById("myCanvas")
+    const ctx = canvas.getContext("2d")
+
+    for (let i = 0; i < 1000; i = i + 1) {
+      ctx.beginPath();
+      ctx.arc(
+        Math.random() * 800, Math.random() * 500, Math.random() * 10 + 10, 0, Math.PI * 2
+      );
+      ctx.stroke();
+    }
+  </script>
+</body>
+
 </html>
